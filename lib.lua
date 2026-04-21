@@ -62,7 +62,9 @@ local Library = {
 local RainbowStep, Hue = 0, 0
 local RainbowColor = Library.AccentColor
 
-Library:GetService = function(self, name) return game:GetService(name) end
+function Library:GetService(name)
+    return game:GetService(name)
+end
 
 table.insert(Library.Signals, RenderStepped:Connect(function(dt)
     RainbowStep = RainbowStep + dt
